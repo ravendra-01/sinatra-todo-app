@@ -1,0 +1,42 @@
+<div class="bg-white p-6 rounded-lg shadow-lg">
+  <form action="/todos" method="post" class="mb-6">
+    <div class="mb-4">
+      <label for="title" class="block text-gray-700">What would you like to do?</label>
+      <input type="text" name="todo[title]" id="title" class="w-full mt-2 p-2 border border-gray-300 rounded-lg" required>
+    </div>
+    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg">Add</button>
+  </form>
+  <h2 class="text-xl font-bold mb-4">Todo List</h2>
+  <table class="w-full text-left table-auto">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">List</th>
+        <th class="px-4 py-2 text-center">Status</th>
+        <th class="px-4 py-2 text-center">Close</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @todos.each do |todo| %>
+        <tr class="bg-gray-100">
+          <td class="border px-4 py-2"><%= todo.title %></td>
+          <td class="border px-4 py-2 text-center">
+            <form action="/todos/<%= todo.id %>" method="post" style="display:inline">
+              <input type="hidden" name="_method" value="patch">
+              <button type="submit" class="text-white px-3 py-1 rounded-full font-bold text-sm <%= todo.completed ? 'bg-gray-500' : 'bg-blue-500' %>">
+                <%= todo.completed ? 'Completed' : 'Pending' %>
+              </button>
+            </form>
+          </td>
+          <td class="border px-4 py-2 text-center">
+            <form action="/todos/<%= todo.id %>" method="post" style="display:inline">
+              <input type="hidden" name="_method" value="delete">
+              <button type="submit" class="text-red-500">
+                <span class="bg-red-500 text-white px-3 py-1 rounded-full font-bold text-sm">Delete</span>
+              </button>
+            </form>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

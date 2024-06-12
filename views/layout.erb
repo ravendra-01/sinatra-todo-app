@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo List</title>
+  </head>
+  <body class="w-full min-h-screen flex flex-wrap justify-center">
+    <div class="w-4/5 min-h-dvh bg-red-100">
+      <div class="m-8">
+        <header class="bg-gradient-to-r from-purple-600 to-blue-600 p-6 border-2 rounded-xl border-blue-500">
+          <h1 class="text-4xl text-white text-center font-bold">TODO List</h1>
+        </header>
+        <main class="container mx-auto mt-8">
+          <% flash.each do |key, value| %>
+            <div class="<%= flash_class(key) %> text-white p-4 rounded-lg mb-4">
+              <%= value %>
+            </div>
+          <% end %>
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
