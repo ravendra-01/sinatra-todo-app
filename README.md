@@ -20,8 +20,8 @@ This is a simple Todo List application built with the Sinatra framework and Mong
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/sinatra-todo-list.git
-    cd sinatra-todo-list
+    git clone [https://github.com/yourusername/sinatra-todo-list.git](https://github.com/ravendra-01/sinatra-todo-app.git)
+    cd sinatra-todo-app
     ```
 
 2. Install the required gems:
