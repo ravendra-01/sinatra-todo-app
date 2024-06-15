@@ -20,7 +20,7 @@ This is a simple Todo List application built with the Sinatra framework and Mong
 
 1. Clone the repository:
     ```sh
-    git clone [https://github.com/yourusername/sinatra-todo-list.git](https://github.com/ravendra-01/sinatra-todo-app.git)
+    git clone https://github.com/ravendra-01/sinatra-todo-app.git
     cd sinatra-todo-app
     ```
 
